@@ -1,0 +1,33 @@
+﻿生成启动时间为 2021-01-29 17:16:37。
+     1>项目“D:\用户目录\我的文档\Visual Studio 2010\Projects\SadpTools\SadpTools\SadpTools.vcxproj”在节点 2 上(build 个目标)。
+     1>PrepareForBuild:
+         正在创建目录“D:\用户目录\我的文档\Visual Studio 2010\Projects\SadpTools\x64\Release\”。
+       InitializeBuildStatus:
+         正在创建“x64\Release\SadpTools.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       ClCompile:
+         D:\Program Files\Visual Studio 2010 Ultimate\VC\bin\x86_amd64\CL.exe /c /I"D:\用户目录\我的文档\Visual Studio 2010\Projects\SadpTools\SadpTools\HCSadpSDK\Include" /Zi /nologo /W3 /WX- /O2 /Oi /GL /D WIN32 /D _WINDOWS /D NDEBUG /D _UNICODE /D UNICODE /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yc"StdAfx.h" /Fp"x64\Release\SadpTools.pch" /Fo"x64\Release\\" /Fd"x64\Release\vc100.pdb" /Gd /TP /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         D:\Program Files\Visual Studio 2010 Ultimate\VC\bin\x86_amd64\CL.exe /c /I"D:\用户目录\我的文档\Visual Studio 2010\Projects\SadpTools\SadpTools\HCSadpSDK\Include" /Zi /nologo /W3 /WX- /O2 /Oi /GL /D WIN32 /D _WINDOWS /D NDEBUG /D _UNICODE /D UNICODE /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"x64\Release\SadpTools.pch" /Fo"x64\Release\\" /Fd"x64\Release\vc100.pdb" /Gd /TP /errorReport:prompt SadpTools.cpp SadpToolsDlg.cpp
+         SadpTools.cpp
+         SadpToolsDlg.cpp
+     1>SadpToolsDlg.cpp(12): warning C4068: 未知的杂注
+       ResourceCompile:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /D NDEBUG /D _UNICODE /D UNICODE /l"0x0804" /Ix64\Release\ /nologo /fo"x64\Release\SadpTools.res" SadpTools.rc 
+       Link:
+         D:\Program Files\Visual Studio 2010 Ultimate\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"D:\用户目录\我的文档\Visual Studio 2010\Projects\SadpTools\x64\Release\SadpTools.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"D:\用户目录\我的文档\Visual Studio 2010\Projects\SadpTools\SadpTools\HCSadpSDK\lib" Sadp.lib /MANIFEST /ManifestFile:"x64\Release\SadpTools.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\用户目录\我的文档\Visual Studio 2010\Projects\SadpTools\x64\Release\SadpTools.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG /TLBID:1 /ENTRY:"wWinMainCRTStartup" /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\用户目录\我的文档\Visual Studio 2010\Projects\SadpTools\x64\Release\SadpTools.lib" /MACHINE:X64 x64\Release\SadpTools.res
+         x64\Release\SadpTools.obj
+         x64\Release\SadpToolsDlg.obj
+         x64\Release\stdafx.obj
+         正在生成代码
+         已完成代码的生成
+         SadpTools.vcxproj -> D:\用户目录\我的文档\Visual Studio 2010\Projects\SadpTools\x64\Release\SadpTools.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"D:\用户目录\我的文档\Visual Studio 2010\Projects\SadpTools\x64\Release\SadpTools.exe;#1" /manifest x64\Release\SadpTools.exe.intermediate.manifest "D:\Program Files\Visual Studio 2010 Ultimate\VC\Include\Manifest\dpiaware.manifest"
+       FinalizeBuildStatus:
+         正在删除文件“x64\Release\SadpTools.unsuccessfulbuild”。
+         正在对“x64\Release\SadpTools.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“D:\用户目录\我的文档\Visual Studio 2010\Projects\SadpTools\SadpTools\SadpTools.vcxproj”(build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:01:02.43

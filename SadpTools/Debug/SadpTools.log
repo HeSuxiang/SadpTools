@@ -1,0 +1,31 @@
+﻿生成启动时间为 2021-01-29 16:03:12。
+     1>项目“D:\用户目录\我的文档\Visual Studio 2010\Projects\SadpTools\SadpTools\SadpTools.vcxproj”在节点 2 上(build 个目标)。
+     1>InitializeBuildStatus:
+         正在对“Debug\SadpTools.unsuccessfulbuild”执行 Touch 任务。
+       ClCompile:
+         所有输出均为最新。
+         D:\Program Files\Visual Studio 2010 Ultimate\VC\bin\CL.exe /c /I"D:\用户目录\我的文档\Visual Studio 2010\Projects\SadpTools\SadpTools\HCSadpSDK\Include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"StdAfx.h" /Fp"Debug\SadpTools.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         D:\Program Files\Visual Studio 2010 Ultimate\VC\bin\CL.exe /c /I"D:\用户目录\我的文档\Visual Studio 2010\Projects\SadpTools\SadpTools\HCSadpSDK\Include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\SadpTools.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt SadpTools.cpp SadpToolsDlg.cpp
+         SadpToolsDlg.cpp
+     1>d:\用户目录\我的文档\visual studio 2010\projects\sadptools\sadptools\sadptoolsdlg.cpp(12): warning C4068: 未知的杂注
+         SadpTools.cpp
+         正在生成代码...
+       ResourceCompile:
+         所有输出均为最新。
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /D _DEBUG /D _UNICODE /D UNICODE /l"0x0804" /IDebug\ /nologo /fo"Debug\SadpTools.res" SadpTools.rc 
+       ManifestResourceCompile:
+         所有输出均为最新。
+       Link:
+         D:\Program Files\Visual Studio 2010 Ultimate\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\用户目录\我的文档\Visual Studio 2010\Projects\SadpTools\Debug\SadpTools.exe" /INCREMENTAL /NOLOGO /LIBPATH:"D:\用户目录\我的文档\Visual Studio 2010\Projects\SadpTools\SadpTools\HCSadpSDK\lib" Sadp.lib /MANIFEST /ManifestFile:"Debug\SadpTools.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\用户目录\我的文档\Visual Studio 2010\Projects\SadpTools\Debug\SadpTools.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"wWinMainCRTStartup" /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\用户目录\我的文档\Visual Studio 2010\Projects\SadpTools\Debug\SadpTools.lib" /MACHINE:X86 Debug\SadpTools.res
+         Debug\SadpTools.exe.embed.manifest.res
+         Debug\SadpTools.obj
+         Debug\SadpToolsDlg.obj
+         Debug\stdafx.obj
+     1>SadpToolsDlg.obj : error LNK2019: 无法解析的外部符号 __imp__SADP_GetSadpVersion@0，该符号在函数 "protected: virtual int __thiscall CSadpToolsDlg::OnInitDialog(void)" (?OnInitDialog@CSadpToolsDlg@@MAEHXZ) 中被引用
+     1>D:\用户目录\我的文档\Visual Studio 2010\Projects\SadpTools\Debug\SadpTools.exe : fatal error LNK1120: 1 个无法解析的外部命令
+     1>已完成生成项目“D:\用户目录\我的文档\Visual Studio 2010\Projects\SadpTools\SadpTools\SadpTools.vcxproj”(build 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:26.04
