@@ -1,21 +1,16 @@
-﻿生成启动时间为 2021-01-29 17:13:29。
+﻿生成启动时间为 2021-02-01 09:40:10。
      1>项目“D:\用户目录\我的文档\Visual Studio 2010\Projects\SadpTools\SadpTools\SadpTools.vcxproj”在节点 2 上(build 个目标)。
-     1>PrepareForBuild:
-         正在创建目录“D:\用户目录\我的文档\Visual Studio 2010\Projects\SadpTools\x64\Debug\”。
-       InitializeBuildStatus:
+     1>InitializeBuildStatus:
          正在创建“x64\Debug\SadpTools.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
        ClCompile:
-         D:\Program Files\Visual Studio 2010 Ultimate\VC\bin\x86_amd64\CL.exe /c /I"D:\用户目录\我的文档\Visual Studio 2010\Projects\SadpTools\SadpTools\HCSadpSDK\Include" /Zi /nologo /W3 /WX- /Od /D WIN32 /D _WINDOWS /D _DEBUG /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"StdAfx.h" /Fp"x64\Debug\SadpTools.pch" /Fo"x64\Debug\\" /Fd"x64\Debug\vc100.pdb" /Gd /TP /errorReport:prompt stdafx.cpp
-         stdafx.cpp
-         D:\Program Files\Visual Studio 2010 Ultimate\VC\bin\x86_amd64\CL.exe /c /I"D:\用户目录\我的文档\Visual Studio 2010\Projects\SadpTools\SadpTools\HCSadpSDK\Include" /Zi /nologo /W3 /WX- /Od /D WIN32 /D _WINDOWS /D _DEBUG /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"x64\Debug\SadpTools.pch" /Fo"x64\Debug\\" /Fd"x64\Debug\vc100.pdb" /Gd /TP /errorReport:prompt SadpTools.cpp SadpToolsDlg.cpp
+         所有输出均为最新。
+         D:\Program Files\Visual Studio 2010 Ultimate\VC\bin\x86_amd64\CL.exe /c /I"D:\用户目录\我的文档\Visual Studio 2010\Projects\SadpTools\SadpTools\HCSadpSDK\Include" /Zi /nologo /W3 /WX- /Od /D WIN32 /D _WINDOWS /D _DEBUG /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"x64\Debug\SadpTools.pch" /Fo"x64\Debug\\" /Fd"x64\Debug\vc100.pdb" /Gd /TP /errorReport:prompt SadpToolsDlg.cpp
          SadpToolsDlg.cpp
      1>SadpToolsDlg.cpp(12): warning C4068: 未知的杂注
-         SadpTools.cpp
-         Generating Code...
        ResourceCompile:
-         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /D _DEBUG /D _UNICODE /D UNICODE /l"0x0804" /Ix64\Debug\ /nologo /fo"x64\Debug\SadpTools.res" SadpTools.rc 
+         所有输出均为最新。
        ManifestResourceCompile:
-         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"x64\Debug\SadpTools.exe.embed.manifest.res" x64\Debug\SadpTools_manifest.rc 
+         所有输出均为最新。
        Link:
          D:\Program Files\Visual Studio 2010 Ultimate\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"D:\用户目录\我的文档\Visual Studio 2010\Projects\SadpTools\x64\Debug\SadpTools.exe" /INCREMENTAL /NOLOGO /LIBPATH:"D:\用户目录\我的文档\Visual Studio 2010\Projects\SadpTools\SadpTools\HCSadpSDK\lib" Sadp.lib /MANIFEST /ManifestFile:"x64\Debug\SadpTools.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\用户目录\我的文档\Visual Studio 2010\Projects\SadpTools\x64\Debug\SadpTools.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"wWinMainCRTStartup" /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\用户目录\我的文档\Visual Studio 2010\Projects\SadpTools\x64\Debug\SadpTools.lib" /MACHINE:X64 x64\Debug\SadpTools.res
          x64\Debug\SadpTools.exe.embed.manifest.res
@@ -25,13 +20,9 @@
          SadpTools.vcxproj -> D:\用户目录\我的文档\Visual Studio 2010\Projects\SadpTools\x64\Debug\SadpTools.exe
        Manifest:
          C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"x64\Debug\SadpTools.exe.embed.manifest" /manifest x64\Debug\SadpTools.exe.intermediate.manifest "D:\Program Files\Visual Studio 2010 Ultimate\VC\Include\Manifest\dpiaware.manifest"
-         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"x64\Debug\SadpTools.exe.embed.manifest.res" x64\Debug\SadpTools_manifest.rc 
+         所有输出均为最新。
        LinkEmbedManifest:
-         D:\Program Files\Visual Studio 2010 Ultimate\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"D:\用户目录\我的文档\Visual Studio 2010\Projects\SadpTools\x64\Debug\SadpTools.exe" /INCREMENTAL /NOLOGO /LIBPATH:"D:\用户目录\我的文档\Visual Studio 2010\Projects\SadpTools\SadpTools\HCSadpSDK\lib" Sadp.lib /MANIFEST /ManifestFile:"x64\Debug\SadpTools.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\用户目录\我的文档\Visual Studio 2010\Projects\SadpTools\x64\Debug\SadpTools.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"wWinMainCRTStartup" /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\用户目录\我的文档\Visual Studio 2010\Projects\SadpTools\x64\Debug\SadpTools.lib" /MACHINE:X64 x64\Debug\SadpTools.res
-         x64\Debug\SadpTools.exe.embed.manifest.res
-         x64\Debug\SadpTools.obj
-         x64\Debug\SadpToolsDlg.obj
-         x64\Debug\stdafx.obj
+         所有输出均为最新。
          SadpTools.vcxproj -> D:\用户目录\我的文档\Visual Studio 2010\Projects\SadpTools\x64\Debug\SadpTools.exe
        FinalizeBuildStatus:
          正在删除文件“x64\Debug\SadpTools.unsuccessfulbuild”。
@@ -40,4 +31,4 @@
 
 生成成功。
 
-已用时间 00:00:30.93
+已用时间 00:00:00.49

@@ -204,8 +204,11 @@ BOOL CSadpToolsDlg::OnInitDialog()
     m_programLangList.SetItemText(23, 2, _T("6"));
 
 	unsigned version =  SADP_GetSadpVersion();
+	CString str;
+	str.Format(_T("%x"), version);
+	//SetDlgItemText(IDC_STATIC,str);
 
-	SetDlgItemText(IDC_LIST1,_T(" ") + version);
+	SetDlgItemText(IDC_EDIT1,str);
   
 	return TRUE;  // 除非将焦点设置到控件，否则返回 TRUE
 }
