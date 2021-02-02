@@ -18,11 +18,14 @@
 class CSadpToolsApp : public CWinApp
 {
 public:
+
 	CSadpToolsApp();
 
 // ÷ÿ–¥
 public:
 	virtual BOOL InitInstance();
+
+	
 
 //  µœ÷
 

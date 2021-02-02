@@ -9,11 +9,16 @@
 
 //海康威视库
 #include "Sadp.h"
-#pragma commment(lib,"Sadp.lib")
+#pragma comment(lib,"Sadp.lib")
+
+
+//Excel库
+#include "ExcelOp.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
+
 
 
 // 用于应用程序“关于”菜单项的 CAboutDlg 对话框
@@ -47,15 +52,19 @@ BEGIN_MESSAGE_MAP(CAboutDlg, CDialogEx)
 END_MESSAGE_MAP()
 
 
+
+
+CSadpToolsDlg * CSadpToolsDlg::pThis = NULL;
+
+
 // CSadpToolsDlg 对话框
-
-
-
 
 CSadpToolsDlg::CSadpToolsDlg(CWnd* pParent /*=NULL*/)
 	: CDialogEx(CSadpToolsDlg::IDD, pParent)
 {
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
+
+	pThis = this;
 }
 
 void CSadpToolsDlg::DoDataExchange(CDataExchange* pDX)
@@ -68,6 +77,8 @@ BEGIN_MESSAGE_MAP(CSadpToolsDlg, CDialogEx)
 	ON_WM_SYSCOMMAND()
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
+	ON_BN_CLICKED(IDC_BUTTON1, &CSadpToolsDlg::OnBnClickedButton1)
+	ON_BN_CLICKED(IDC_BUTTON2, &CSadpToolsDlg::OnBnClickedButton2)
 END_MESSAGE_MAP()
 
 
@@ -112,23 +123,26 @@ BOOL CSadpToolsDlg::OnInitDialog()
     m_programLangList.SetExtendedStyle(m_programLangList.GetExtendedStyle() | LVS_EX_FULLROWSELECT | LVS_EX_GRIDLINES);   
   
     // 为列表视图控件添加三列   
-    m_programLangList.InsertColumn(0, _T("语言"), LVCFMT_CENTER, rect.Width()/3, 0);   
-    m_programLangList.InsertColumn(1, _T("2012.02排名"), LVCFMT_CENTER, rect.Width()/3, 1);   
-    m_programLangList.InsertColumn(2, _T("2011.02排名"), LVCFMT_CENTER, rect.Width()/3, 2);   
-  
+    m_programLangList.InsertColumn(0, _T("IP地址"), LVCFMT_CENTER, rect.Width()/4, 0);   
+    m_programLangList.InsertColumn(1, _T("MAC地址"), LVCFMT_CENTER, rect.Width()/4, 1);   
+    m_programLangList.InsertColumn(2, _T("设备类型"), LVCFMT_CENTER, rect.Width()/4, 2);   
+	m_programLangList.InsertColumn(3, _T("消息类型"), LVCFMT_CENTER, rect.Width()/4, 3); 
+
     // 在列表视图控件中插入列表项，并设置列表子项文本   
-    m_programLangList.InsertItem(0, _T("Java"));   
+    m_programLangList.InsertItem(0, _T("IP地址"));   
     m_programLangList.SetItemText(0, 1, _T("1"));   
     m_programLangList.SetItemText(0, 2, _T("1"));   
-    m_programLangList.InsertItem(1, _T("C"));   
+    m_programLangList.InsertItem(1, _T("MAC地址"));   
     m_programLangList.SetItemText(1, 1, _T("2"));   
     m_programLangList.SetItemText(1, 2, _T("2"));   
-    m_programLangList.InsertItem(2, _T("C#"));   
+    m_programLangList.InsertItem(2, _T("设备类型"));   
     m_programLangList.SetItemText(2, 1, _T("3"));   
     m_programLangList.SetItemText(2, 2, _T("6"));   
-    m_programLangList.InsertItem(3, _T("C++"));   
+    m_programLangList.InsertItem(3, _T("消息"));   
     m_programLangList.SetItemText(3, 1, _T("4"));   
     m_programLangList.SetItemText(3, 2, _T("3"));   
+
+	//m_programLangList.InsertItem(4, _T("C++"))
 
 	    // 在列表视图控件中插入列表项，并设置列表子项文本   
     m_programLangList.InsertItem(4, _T("Java"));   
@@ -260,5 +274,115 @@ void CSadpToolsDlg::OnPaint()
 HCURSOR CSadpToolsDlg::OnQueryDragIcon()
 {
 	return static_cast<HCURSOR>(m_hIcon);
+}
+
+
+
+void CSadpToolsDlg::OnBnClickedButton1()
+{
+	// TODO: 在此添加控件通知处理程序代码
+	
+
+
+	//选择单个文件对话框
+	CString strFile = _T("");
+	CFileDialog    dlgFile(TRUE, NULL, NULL, OFN_HIDEREADONLY, _T("Office2003 Files (*.xls)|*.xls|Office2007 Files (*.xlsx)|*.xlsx|All Files (*.*)|*.*||"), NULL);
+	if (dlgFile.DoModal())
+	{
+		strFile = dlgFile.GetPathName();
+	}
+	CString tchs = strFile;
+	//CString tchs = _T("c:\\out.xls");
+
+
+	m_Excel = new CExcelOp();
+	CExcelOp::InitExcel();
+
+
+	if (PathFileExists(strFile))
+	{
+		//打开c:\\out.xls
+		m_Excel->OpenExcelFile(strFile); 
+		//m_excel->ShowInExcel(TRUE);
+	}
+
+
+	if (!m_Excel->LoadSheet((long)1,1))
+	{
+		return;
+	}
+
+	CString sheetName = m_Excel->GetSheetName((long)1);
+
+	m_programLangList.SetItemText(0, 0, m_Excel->GetCellString(2,3));  
+	m_programLangList.SetItemText(0, 1, m_Excel->GetCellString(3,3));  
+	m_programLangList.SetItemText(0, 2, m_Excel->GetCellString(4,3));  
+
+//	m_programLangList.SetItemText(0, 2, m_Excel->GetCellByName(_T("4"),_T("C")));
+// 	m_programLangList.SetItemText(0, 0, m_Excel->GetCellByName(_T("2"),_T("C")));  
+// 	m_programLangList.SetItemText(0, 1, m_Excel->GetCellByName(_T("3"),_T("C")));  
+// 	m_programLangList.SetItemText(0, 2, m_Excel->GetCellByName(_T("4"),_T("C")));  
+
+ 
+}
+
+
+void CSadpToolsDlg::OnBnClickedButton2()
+{
+	// TODO: 在此添加控件通知处理程序代码
+
+	SADP_Start_V40(DeviceInfoCallback,1,NULL);
+}
+
+
+
+
+
+void CALLBACK CSadpToolsDlg::DeviceInfoCallback(const SADP_DEVICE_INFO_V40 *lpDeviceInfo, void *pUserData){
+
+	if(CSadpToolsDlg::pThis==NULL)
+		return ;
+	
+
+	SADP_DEVICE_INFO DeviceInfo = lpDeviceInfo->struSadpDeviceInfo;
+
+
+	CString ipv4Address(DeviceInfo.szIPv4Address);
+	CString macAddress(DeviceInfo.szMAC);
+	CString deviceType;
+	deviceType.Format(_T("%d"),DeviceInfo.dwDeviceType);
+
+
+	//SADP_ADD  1  新设备上线，之前在 SADP 库列表中未出现的设备
+	//SADP_UPDATE  2  在线的设备 IP、子网掩码、端口、硬盘或编码器个数改变
+	//SADP_DEC  3  设备下线，设备自动发送下线消息或 30 秒内检测不到设备
+	//SADP_RESTART  4  之前 SADP 库列表中出现过之后下线的设备再次上线
+	//SADP_UPDATEFAIL  5  设备更新失败
+	switch(DeviceInfo.iResult){
+	case SADP_ADD: 
+			CSadpToolsDlg::pThis->UpdateSadpData(ipv4Address, macAddress, deviceType, DeviceInfo.iResult);
+		break;
+	case SADP_DEC:
+		break;
+	case SADP_UPDATE:
+	case SADP_RESTART:
+	case SADP_UPDATEFAIL:
+		break;
+	}
+
+
+ 
+
+	
+
+}
+
+BOOL CSadpToolsDlg::UpdateSadpData( CString Ipv4Address,CString MacAddress,  CString DeviceType, int InfoTpye )
+{
+	m_programLangList.SetItemText(0, 0, Ipv4Address);
+	m_programLangList.SetItemText(0, 1, MacAddress);
+	m_programLangList.SetItemText(0, 2, DeviceType);
+	m_programLangList.SetItemText(0, 3, Ipv4Address);
+	return TRUE;
 }
 

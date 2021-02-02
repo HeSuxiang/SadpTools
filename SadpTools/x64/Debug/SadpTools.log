@@ -1,4 +1,4 @@
-﻿生成启动时间为 2021-02-01 09:40:10。
+﻿生成启动时间为 2021-02-02 16:44:15。
      1>项目“D:\用户目录\我的文档\Visual Studio 2010\Projects\SadpTools\SadpTools\SadpTools.vcxproj”在节点 2 上(build 个目标)。
      1>InitializeBuildStatus:
          正在创建“x64\Debug\SadpTools.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
@@ -6,7 +6,6 @@
          所有输出均为最新。
          D:\Program Files\Visual Studio 2010 Ultimate\VC\bin\x86_amd64\CL.exe /c /I"D:\用户目录\我的文档\Visual Studio 2010\Projects\SadpTools\SadpTools\HCSadpSDK\Include" /Zi /nologo /W3 /WX- /Od /D WIN32 /D _WINDOWS /D _DEBUG /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"x64\Debug\SadpTools.pch" /Fo"x64\Debug\\" /Fd"x64\Debug\vc100.pdb" /Gd /TP /errorReport:prompt SadpToolsDlg.cpp
          SadpToolsDlg.cpp
-     1>SadpToolsDlg.cpp(12): warning C4068: 未知的杂注
        ResourceCompile:
          所有输出均为最新。
        ManifestResourceCompile:
@@ -14,6 +13,7 @@
        Link:
          D:\Program Files\Visual Studio 2010 Ultimate\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"D:\用户目录\我的文档\Visual Studio 2010\Projects\SadpTools\x64\Debug\SadpTools.exe" /INCREMENTAL /NOLOGO /LIBPATH:"D:\用户目录\我的文档\Visual Studio 2010\Projects\SadpTools\SadpTools\HCSadpSDK\lib" Sadp.lib /MANIFEST /ManifestFile:"x64\Debug\SadpTools.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\用户目录\我的文档\Visual Studio 2010\Projects\SadpTools\x64\Debug\SadpTools.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"wWinMainCRTStartup" /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\用户目录\我的文档\Visual Studio 2010\Projects\SadpTools\x64\Debug\SadpTools.lib" /MACHINE:X64 x64\Debug\SadpTools.res
          x64\Debug\SadpTools.exe.embed.manifest.res
+         x64\Debug\ExcelOp.obj
          x64\Debug\SadpTools.obj
          x64\Debug\SadpToolsDlg.obj
          x64\Debug\stdafx.obj
@@ -31,4 +31,4 @@
 
 生成成功。
 
-已用时间 00:00:00.49
+已用时间 00:00:01.86

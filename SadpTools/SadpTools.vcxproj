@@ -196,6 +196,13 @@
     <None Include="res\SadpTools.rc2" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CApplication.h" />
+    <ClInclude Include="CRange.h" />
+    <ClInclude Include="CWorkbook.h" />
+    <ClInclude Include="CWorkbooks.h" />
+    <ClInclude Include="CWorksheet.h" />
+    <ClInclude Include="CWorksheets.h" />
+    <ClInclude Include="ExcelOp.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="SadpTools.h" />
     <ClInclude Include="SadpToolsDlg.h" />
@@ -203,6 +210,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ExcelOp.cpp" />
     <ClCompile Include="SadpTools.cpp" />
     <ClCompile Include="SadpToolsDlg.cpp" />
     <ClCompile Include="stdafx.cpp">
