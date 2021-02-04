@@ -1,4 +1,4 @@
-﻿生成启动时间为 2021-02-02 16:44:15。
+﻿生成启动时间为 2021-02-03 11:57:00。
      1>项目“D:\用户目录\我的文档\Visual Studio 2010\Projects\SadpTools\SadpTools\SadpTools.vcxproj”在节点 2 上(build 个目标)。
      1>InitializeBuildStatus:
          正在创建“x64\Debug\SadpTools.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
@@ -31,4 +31,4 @@
 
 生成成功。
 
-已用时间 00:00:01.86
+已用时间 00:00:00.99

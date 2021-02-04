@@ -65,6 +65,7 @@ CSadpToolsDlg::CSadpToolsDlg(CWnd* pParent /*=NULL*/)
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
 
 	pThis = this;
+	DeviceCount = 0;
 }
 
 void CSadpToolsDlg::DoDataExchange(CDataExchange* pDX)
@@ -123,99 +124,100 @@ BOOL CSadpToolsDlg::OnInitDialog()
     m_programLangList.SetExtendedStyle(m_programLangList.GetExtendedStyle() | LVS_EX_FULLROWSELECT | LVS_EX_GRIDLINES);   
   
     // 为列表视图控件添加三列   
-    m_programLangList.InsertColumn(0, _T("IP地址"), LVCFMT_CENTER, rect.Width()/4, 0);   
-    m_programLangList.InsertColumn(1, _T("MAC地址"), LVCFMT_CENTER, rect.Width()/4, 1);   
-    m_programLangList.InsertColumn(2, _T("设备类型"), LVCFMT_CENTER, rect.Width()/4, 2);   
-	m_programLangList.InsertColumn(3, _T("消息类型"), LVCFMT_CENTER, rect.Width()/4, 3); 
+	m_programLangList.InsertColumn(0, _T("序号"), LVCFMT_CENTER, rect.Width()/5, 0);   
+    m_programLangList.InsertColumn(1, _T("IP地址"), LVCFMT_CENTER, rect.Width()/5, 1);   
+    m_programLangList.InsertColumn(2, _T("MAC地址"), LVCFMT_CENTER, rect.Width()/5, 2);   
+    m_programLangList.InsertColumn(3, _T("设备类型"), LVCFMT_CENTER, rect.Width()/5, 3);   
+	m_programLangList.InsertColumn(4, _T("消息类型"), LVCFMT_CENTER, rect.Width()/5, 4); 
 
-    // 在列表视图控件中插入列表项，并设置列表子项文本   
-    m_programLangList.InsertItem(0, _T("IP地址"));   
-    m_programLangList.SetItemText(0, 1, _T("1"));   
-    m_programLangList.SetItemText(0, 2, _T("1"));   
-    m_programLangList.InsertItem(1, _T("MAC地址"));   
-    m_programLangList.SetItemText(1, 1, _T("2"));   
-    m_programLangList.SetItemText(1, 2, _T("2"));   
-    m_programLangList.InsertItem(2, _T("设备类型"));   
-    m_programLangList.SetItemText(2, 1, _T("3"));   
-    m_programLangList.SetItemText(2, 2, _T("6"));   
-    m_programLangList.InsertItem(3, _T("消息"));   
-    m_programLangList.SetItemText(3, 1, _T("4"));   
-    m_programLangList.SetItemText(3, 2, _T("3"));   
+ //   // 在列表视图控件中插入列表项，并设置列表子项文本   
+ //   m_programLangList.InsertItem(0, _T("IP地址"));   
+ //   m_programLangList.SetItemText(0, 1, _T("1"));   
+ //   m_programLangList.SetItemText(0, 2, _T("1"));   
+ //   m_programLangList.InsertItem(1, _T("MAC地址"));   
+ //   m_programLangList.SetItemText(1, 1, _T("2"));   
+ //   m_programLangList.SetItemText(1, 2, _T("2"));   
+ //   m_programLangList.InsertItem(2, _T("设备类型"));   
+ //   m_programLangList.SetItemText(2, 1, _T("3"));   
+ //   m_programLangList.SetItemText(2, 2, _T("6"));   
+ //   m_programLangList.InsertItem(3, _T("消息"));   
+ //   m_programLangList.SetItemText(3, 1, _T("4"));   
+ //   m_programLangList.SetItemText(3, 2, _T("3"));   
 
-	//m_programLangList.InsertItem(4, _T("C++"))
+	////m_programLangList.InsertItem(4, _T("C++"))
 
-	    // 在列表视图控件中插入列表项，并设置列表子项文本   
-    m_programLangList.InsertItem(4, _T("Java"));   
-    m_programLangList.SetItemText(4, 1, _T("1"));   
-    m_programLangList.SetItemText(4, 2, _T("1"));   
-    m_programLangList.InsertItem(5, _T("C"));   
-    m_programLangList.SetItemText(5, 1, _T("2"));   
-    m_programLangList.SetItemText(5, 2, _T("2"));   
-    m_programLangList.InsertItem(6, _T("C#"));   
-    m_programLangList.SetItemText(6, 1, _T("3"));   
-    m_programLangList.SetItemText(6, 2, _T("6"));   
-    m_programLangList.InsertItem(7, _T("C++"));   
-    m_programLangList.SetItemText(7, 1, _T("4"));   
-    m_programLangList.SetItemText(7, 2, _T("3"));   
+	//    // 在列表视图控件中插入列表项，并设置列表子项文本   
+ //   m_programLangList.InsertItem(4, _T("Java"));   
+ //   m_programLangList.SetItemText(4, 1, _T("1"));   
+ //   m_programLangList.SetItemText(4, 2, _T("1"));   
+ //   m_programLangList.InsertItem(5, _T("C"));   
+ //   m_programLangList.SetItemText(5, 1, _T("2"));   
+ //   m_programLangList.SetItemText(5, 2, _T("2"));   
+ //   m_programLangList.InsertItem(6, _T("C#"));   
+ //   m_programLangList.SetItemText(6, 1, _T("3"));   
+ //   m_programLangList.SetItemText(6, 2, _T("6"));   
+ //   m_programLangList.InsertItem(7, _T("C++"));   
+ //   m_programLangList.SetItemText(7, 1, _T("4"));   
+ //   m_programLangList.SetItemText(7, 2, _T("3"));   
 
-	    // 在列表视图控件中插入列表项，并设置列表子项文本   
-   
-    m_programLangList.InsertItem(8, _T("C"));   
-    m_programLangList.SetItemText(8, 1, _T("2"));   
-    m_programLangList.SetItemText(8, 2, _T("2"));   
-    m_programLangList.InsertItem(9, _T("C#"));   
-    m_programLangList.SetItemText(9, 1, _T("3"));   
-    m_programLangList.SetItemText(9, 2, _T("6"));   
-    m_programLangList.InsertItem(10, _T("C++"));   
-    m_programLangList.SetItemText(10, 1, _T("4"));   
-    m_programLangList.SetItemText(10, 2, _T("3"));   
+	//    // 在列表视图控件中插入列表项，并设置列表子项文本   
+ //  
+ //   m_programLangList.InsertItem(8, _T("C"));   
+ //   m_programLangList.SetItemText(8, 1, _T("2"));   
+ //   m_programLangList.SetItemText(8, 2, _T("2"));   
+ //   m_programLangList.InsertItem(9, _T("C#"));   
+ //   m_programLangList.SetItemText(9, 1, _T("3"));   
+ //   m_programLangList.SetItemText(9, 2, _T("6"));   
+ //   m_programLangList.InsertItem(10, _T("C++"));   
+ //   m_programLangList.SetItemText(10, 1, _T("4"));   
+ //   m_programLangList.SetItemText(10, 2, _T("3"));   
 
-	   m_programLangList.InsertItem(11, _T("Java"));   
-    m_programLangList.SetItemText(11, 1, _T("1"));   
-    m_programLangList.SetItemText(11, 2, _T("1")); 
+	//   m_programLangList.InsertItem(11, _T("Java"));   
+ //   m_programLangList.SetItemText(11, 1, _T("1"));   
+ //   m_programLangList.SetItemText(11, 2, _T("1")); 
 
-	    // 在列表视图控件中插入列表项，并设置列表子项文本   
-    m_programLangList.InsertItem(12, _T("Java"));   
-    m_programLangList.SetItemText(12, 1, _T("1"));   
-    m_programLangList.SetItemText(12, 2, _T("1"));   
-    m_programLangList.InsertItem(13, _T("C"));   
-    m_programLangList.SetItemText(13, 1, _T("2"));   
-    m_programLangList.SetItemText(13, 2, _T("2"));   
-    m_programLangList.InsertItem(14, _T("C#"));   
-    m_programLangList.SetItemText(14, 1, _T("3"));   
-    m_programLangList.SetItemText(14, 2, _T("6"));   
-    m_programLangList.InsertItem(15, _T("C++"));   
-    m_programLangList.SetItemText(15, 1, _T("4"));   
-    m_programLangList.SetItemText(15, 2, _T("3"));   
+	//    // 在列表视图控件中插入列表项，并设置列表子项文本   
+ //   m_programLangList.InsertItem(12, _T("Java"));   
+ //   m_programLangList.SetItemText(12, 1, _T("1"));   
+ //   m_programLangList.SetItemText(12, 2, _T("1"));   
+ //   m_programLangList.InsertItem(13, _T("C"));   
+ //   m_programLangList.SetItemText(13, 1, _T("2"));   
+ //   m_programLangList.SetItemText(13, 2, _T("2"));   
+ //   m_programLangList.InsertItem(14, _T("C#"));   
+ //   m_programLangList.SetItemText(14, 1, _T("3"));   
+ //   m_programLangList.SetItemText(14, 2, _T("6"));   
+ //   m_programLangList.InsertItem(15, _T("C++"));   
+ //   m_programLangList.SetItemText(15, 1, _T("4"));   
+ //   m_programLangList.SetItemText(15, 2, _T("3"));   
 
 
-	    // 在列表视图控件中插入列表项，并设置列表子项文本   
-    m_programLangList.InsertItem(16, _T("Java"));   
-    m_programLangList.SetItemText(16, 1, _T("1"));   
-    m_programLangList.SetItemText(16, 2, _T("1"));   
-    m_programLangList.InsertItem(17, _T("C"));   
-    m_programLangList.SetItemText(17, 1, _T("2"));   
-    m_programLangList.SetItemText(17, 2, _T("2"));   
-    m_programLangList.InsertItem(18, _T("C#"));   
-    m_programLangList.SetItemText(18, 1, _T("3"));   
-    m_programLangList.SetItemText(18, 2, _T("6"));   
-    m_programLangList.InsertItem(19, _T("C++"));   
-    m_programLangList.SetItemText(19, 1, _T("4"));   
-    m_programLangList.SetItemText(19, 2, _T("3"));   
+	//    // 在列表视图控件中插入列表项，并设置列表子项文本   
+ //   m_programLangList.InsertItem(16, _T("Java"));   
+ //   m_programLangList.SetItemText(16, 1, _T("1"));   
+ //   m_programLangList.SetItemText(16, 2, _T("1"));   
+ //   m_programLangList.InsertItem(17, _T("C"));   
+ //   m_programLangList.SetItemText(17, 1, _T("2"));   
+ //   m_programLangList.SetItemText(17, 2, _T("2"));   
+ //   m_programLangList.InsertItem(18, _T("C#"));   
+ //   m_programLangList.SetItemText(18, 1, _T("3"));   
+ //   m_programLangList.SetItemText(18, 2, _T("6"));   
+ //   m_programLangList.InsertItem(19, _T("C++"));   
+ //   m_programLangList.SetItemText(19, 1, _T("4"));   
+ //   m_programLangList.SetItemText(19, 2, _T("3"));   
 
-	    // 在列表视图控件中插入列表项，并设置列表子项文本   
-   m_programLangList.InsertItem(20, _T("C#"));   
-    m_programLangList.SetItemText(20, 1, _T("3"));   
-    m_programLangList.SetItemText(20, 2, _T("6"));   
-	m_programLangList.InsertItem(21, _T("C#"));   
-    m_programLangList.SetItemText(21, 1, _T("3"));   
-    m_programLangList.SetItemText(21, 2, _T("6"));   
-	m_programLangList.InsertItem(22, _T("C#"));   
-    m_programLangList.SetItemText(22, 1, _T("3"));   
-    m_programLangList.SetItemText(22, 2, _T("6"));   
-	m_programLangList.InsertItem(23, _T("C#"));   
-    m_programLangList.SetItemText(23, 1, _T("3"));   
-    m_programLangList.SetItemText(23, 2, _T("6"));
+	//    // 在列表视图控件中插入列表项，并设置列表子项文本   
+ //  m_programLangList.InsertItem(20, _T("C#"));   
+ //   m_programLangList.SetItemText(20, 1, _T("3"));   
+ //   m_programLangList.SetItemText(20, 2, _T("6"));   
+	//m_programLangList.InsertItem(21, _T("C#"));   
+ //   m_programLangList.SetItemText(21, 1, _T("3"));   
+ //   m_programLangList.SetItemText(21, 2, _T("6"));   
+	//m_programLangList.InsertItem(22, _T("C#"));   
+ //   m_programLangList.SetItemText(22, 1, _T("3"));   
+ //   m_programLangList.SetItemText(22, 2, _T("6"));   
+	//m_programLangList.InsertItem(23, _T("C#"));   
+ //   m_programLangList.SetItemText(23, 1, _T("3"));   
+ //   m_programLangList.SetItemText(23, 2, _T("6"));
 
 	unsigned version =  SADP_GetSadpVersion();
 	CString str;
@@ -351,6 +353,8 @@ void CALLBACK CSadpToolsDlg::DeviceInfoCallback(const SADP_DEVICE_INFO_V40 *lpDe
 	CString macAddress(DeviceInfo.szMAC);
 	CString deviceType;
 	deviceType.Format(_T("%d"),DeviceInfo.dwDeviceType);
+	CString infoTpye;
+	infoTpye.Format(_T("%d"),DeviceInfo.iResult);
 
 
 	//SADP_ADD  1  新设备上线，之前在 SADP 库列表中未出现的设备
@@ -360,14 +364,16 @@ void CALLBACK CSadpToolsDlg::DeviceInfoCallback(const SADP_DEVICE_INFO_V40 *lpDe
 	//SADP_UPDATEFAIL  5  设备更新失败
 	switch(DeviceInfo.iResult){
 	case SADP_ADD: 
-			CSadpToolsDlg::pThis->UpdateSadpData(ipv4Address, macAddress, deviceType, DeviceInfo.iResult);
-		break;
+	
 	case SADP_DEC:
-		break;
 	case SADP_UPDATE:
 	case SADP_RESTART:
 	case SADP_UPDATEFAIL:
+		CSadpToolsDlg::pThis->UpdateSadpData(ipv4Address, macAddress, deviceType, infoTpye);
 		break;
+	default:
+				
+				break;
 	}
 
 
@@ -377,12 +383,16 @@ void CALLBACK CSadpToolsDlg::DeviceInfoCallback(const SADP_DEVICE_INFO_V40 *lpDe
 
 }
 
-BOOL CSadpToolsDlg::UpdateSadpData( CString Ipv4Address,CString MacAddress,  CString DeviceType, int InfoTpye )
+BOOL CSadpToolsDlg::UpdateSadpData( CString Ipv4Address,CString MacAddress,  CString DeviceType, CString InfoTpye )
 {
-	m_programLangList.SetItemText(0, 0, Ipv4Address);
-	m_programLangList.SetItemText(0, 1, MacAddress);
-	m_programLangList.SetItemText(0, 2, DeviceType);
-	m_programLangList.SetItemText(0, 3, Ipv4Address);
+	CString index;
+	index.Format(_T("%d"),DeviceCount);
+	m_programLangList.InsertItem(DeviceCount, index);
+	m_programLangList.SetItemText(DeviceCount, 1,Ipv4Address);
+	m_programLangList.SetItemText(DeviceCount, 2, MacAddress);
+	m_programLangList.SetItemText(DeviceCount, 3, DeviceType);
+	m_programLangList.SetItemText(DeviceCount, 4, InfoTpye);
+	DeviceCount++;
 	return TRUE;
 }
 

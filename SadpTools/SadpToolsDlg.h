@@ -28,9 +28,12 @@ public:
 
 	//静态回调函数
 	static void CALLBACK DeviceInfoCallback(const SADP_DEVICE_INFO_V40 *lpDeviceInfo, void *pUserData);
+	
+	//统计设备数量
+	int DeviceCount;
 
 	//更新数据
-	BOOL UpdateSadpData(CString Ipv4Address,CString MacAddress,  CString DeviceType, int InfoTpye );
+	BOOL UpdateSadpData(CString Ipv4Address,CString MacAddress,  CString DeviceType, CString InfoTpye );
 
 
 	protected:
